@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Hàm tìm giá trị nhỏ nhất trong một mảng
+        function findMin(arr) {
+            var min = arr[0];
+            for (var i = 1; i < arr.length; ++i) {
+                if (arr[i] < min) {
+                    min = arr[i];
+                }
+            }
+            return min;
+        }
+
+        // Hàm tìm giá trị lớn nhất trong một mảng
+        function findMax(arr) {
+            var max = arr[0];
+            for (var i = 1; i < arr.length; ++i) {
+                if (arr[i] > max) {
+                    max = arr[i];
+                }
+            }
+            return max;
+        }
+
+        // Tạo một mảng ngẫu nhiên gồm 100 phần tử
+        var nums = [];
+        for (var i = 0; i < 100; ++i) {
+            nums[i] = Math.floor(Math.random() * 101);
+        }
+
+        // Hiển thị mảng
+        function dispArr(arr) {
+            for (var i = 0; i < arr.length; ++i) {
+                document.write(arr[i] + " ");
+                if (i % 10 == 9) {
+                    document.write("<br/>");
+                }
+            }
+            if (i % 10 != 0) {
+                document.write("<br/>");
+            }
+        }
+
+        // Tìm giá trị nhỏ nhất và lớn nhất trong mảng
+        var minValue = findMin(nums);
+        var maxValue = findMax(nums);
+
+        // Hiển thị mảng và giá trị nhỏ nhất và lớn nhất
+        dispArr(nums);
+        document.write("<br/>");
+        document.write("The minimum value is: " + minValue);
+        document.write("<br/>");
+        document.write("The maximum value is: " + maxValue);
+    </script>
+</body>
+
+</html>
